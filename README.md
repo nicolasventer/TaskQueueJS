@@ -7,6 +7,7 @@ TaskQueue is a typescript/javascript library that allows you to queue asynchrono
 # Features
 
 - function `push` to add a task to the queue for a key
+- return a promise that resolves when the task is executed
 
 # Installation
 
