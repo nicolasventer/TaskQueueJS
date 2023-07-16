@@ -1,4 +1,4 @@
-export class TaksQueue {
+export class TaskQueue {
 	private queueMap = new Map<string, (() => Promise<void>)[]>();
 	private runningSet = new Set<string>();
 
@@ -18,8 +18,8 @@ export class TaksQueue {
 	public push<T>(task: () => Promise<T>, key = "") {
 		const promise = new Promise<T>((resolve, reject) => {
 			const queue = this.queueMap.get(key);
-			if (!queue) this.queueMap.set(key, [() => task().then(resolve).catch(reject)]);
-			else queue.push(() => task().then(resolve).catch(reject));
+			if (queue) queue.push(() => task().then(resolve).catch(reject));
+			else this.queueMap.set(key, [() => task().then(resolve).catch(reject)]);
 			this.run(key);
 		});
 		return promise;

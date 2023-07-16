@@ -26,11 +26,11 @@ npm install -g ts-node@10.9.1
 index.ts:
 
 ```typescript
-import { TaksQueue } from "./TaksQueue";
+import { TaskQueue } from "./TaskQueue";
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const taskQueue = new TaksQueue();
+const taskQueue = new TaskQueue();
 
 const task1 = () => wait(1000).then(() => console.log("Task 1"));
 const task2 = () => wait(2000).then(() => console.log("Task 2"));
@@ -67,7 +67,7 @@ Task 3 finished (key1)
 
 
 ```ts
-export class TaksQueue {
+export class TaskQueue {
 	public push<T>(task: () => Promise<T>, key = "") {}
 }
 ```

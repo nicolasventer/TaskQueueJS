@@ -1,6 +1,6 @@
 // @ts-check
 
-const TaksQueue = function () {
+const TaskQueue = function () {
 	/** @type {Map<string, (() => Promise<void>)[]>} */
 	const queueMap = new Map();
 	/** @type {Set<string>} */

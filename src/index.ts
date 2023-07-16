@@ -1,8 +1,8 @@
-import { TaksQueue } from "./TaksQueue";
+import { TaskQueue } from "./TaskQueue";
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const taskQueue = new TaksQueue();
+const taskQueue = new TaskQueue();
 
 const task1 = () => wait(1000).then(() => console.log("Task 1"));
 const task2 = () => wait(2000).then(() => console.log("Task 2"));
