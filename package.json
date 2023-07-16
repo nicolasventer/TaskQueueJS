@@ -1,0 +1,14 @@
+{
+	"name": "task-queue",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"start": "ts-node src/index.ts"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@types/node": "^18.15.11",
+		"http": "^0.0.1-security"
+	}
+}
