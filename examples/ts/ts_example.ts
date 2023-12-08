@@ -1,4 +1,4 @@
-import { TaskQueue } from "./TaskQueue";
+import { TaskQueue } from "../../src/TaskQueue";
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 

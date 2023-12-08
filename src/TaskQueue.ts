@@ -14,7 +14,12 @@ export class TaskQueue {
 		}
 		this.runningSet.delete(key);
 	}
-
+	/**
+	 * Enqueue a task to be executed.
+	 * @param task task to execute
+	 * @param key [default=""] key of the queue where to store the task
+	 * @returns the promise of the task that is resolved (or rejected) when the task is executed
+	 */
 	public push<T>(task: () => Promise<T>, key = "") {
 		const promise = new Promise<T>((resolve, reject) => {
 			const queue = this.queueMap.get(key);

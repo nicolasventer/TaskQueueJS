@@ -1,32 +1,25 @@
-# TaskQueue
+# TaskQueueJS
 
-# Description
+TaskQueueJS is a typescript/javascript library that allows you to queue asynchronous tasks and execute them sequentially.
 
-TaskQueue is a typescript/javascript library that allows you to queue asynchronous tasks and execute them sequentially.
-
-# Features
+## Features
 
 - function `push` to add a task to the queue for a key
 - return a promise that resolves when the task is executed
 
-# Installation
-
-### Prerequisites
-
-*(It is recommanded to install Node and npm with [nvm](https://github.com/nvm-sh/nvm), check for [nvm-windows](https://github.com/coreybutler/nvm-windows) if you are on Windows)*
-- [Node.js](https://nodejs.org/en/) (v19.0.0)
-- [npm](https://www.npmjs.com/) (v9.7.2)
+## Installation
 
 ```bash
-# Install ts-node
-npm install -g ts-node@10.9.1
+npm install https://github.com/nicolasventer/TaskQueueJS/releases/latest/download/task-queue-js.tgz
 ```
 
-# Example
+*After the first installation, you can update with `npm update task-queue-js`.*
 
-index.ts:
+## Example
 
-```typescript
+Content of [example/ts/ts_example.ts](example/ts/ts_example.ts):
+
+```ts
 import { TaskQueue } from "./TaskQueue";
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -64,12 +57,24 @@ Task 3
 Task 3 finished (key1)
 ```
 
-# Usage
+Content of [example/js/js_example.js](example/js/js_example.js):
+
+```js
+// TODO:
+```
+
+## Usage
 
 
 ```ts
-export class TaskQueue {
-	public push<T>(task: () => Promise<T>, key = "") {}
+export declare class TaskQueue {
+    /**
+     * Enqueue a task to be executed.
+     * @param task task to execute
+     * @param key [default=""] key of the queue where to store the task
+     * @returns the promise of the task that is resolved (or rejected) when the task is executed
+     */
+    push<T>(task: () => Promise<T>, key?: string): Promise<T>;
 }
 ```
 

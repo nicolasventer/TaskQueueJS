@@ -1,14 +1,27 @@
 {
-	"name": "task-queue",
+	"name": "task-queue-js",
 	"version": "1.0.0",
-	"description": "",
-	"scripts": {
-		"start": "ts-node src/index.ts"
+	"description": "Object that enqueue asynchronous tasks and execute them sequentially",
+	"files": [
+		"build"
+	],
+	"main": "build/index.js",
+	"exports": {
+		"import": "./build/index.js",
+		"require": "./build/index.js",
+		"types": "./build/index.d.ts"
 	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"@types/node": "^18.15.11",
-		"http": "^0.0.1-security"
+	"type": "commonjs",
+	"scripts": {
+		"build": "cd src && tsc"
+	},
+	"author": "Nicolas VENTER",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nicolasventer/TaskQueueJS.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nicolasventer/TaskQueueJS/issues"
 	}
 }
