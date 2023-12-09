@@ -5,11 +5,11 @@
 	"files": [
 		"build"
 	],
-	"main": "build/index.js",
+	"main": "build/TaskQueue.js",
 	"exports": {
-		"import": "./build/index.js",
-		"require": "./build/index.js",
-		"types": "./build/index.d.ts"
+		"import": "./build/TaskQueue.js",
+		"require": "./build/TaskQueue.js",
+		"types": "./build/TaskQueue.d.ts"
 	},
 	"type": "commonjs",
 	"scripts": {
